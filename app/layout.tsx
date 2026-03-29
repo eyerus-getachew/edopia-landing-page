@@ -1,16 +1,20 @@
 import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import type { ReactNode } from "react"
+import type { ReactNode } from "react";
+
 export const metadata = {
   title: "Edopia",
   description: "Learning platform",
-}
+  icons: {
+    icon: "/icon.png", // 👈 make sure this file exists
+  },
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: ReactNode
+  children: ReactNode;
 }) {
   return (
     <html lang="en">
@@ -22,5 +26,5 @@ export default function RootLayout({
         <Footer />
       </body>
     </html>
-  )
+  );
 }

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 280" preserveAspectRatio="none" width="1440" height="280">
+  <defs>
+    <linearGradient id="grassGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4ade80;stop-opacity:0.35"/>
+      <stop offset="45%" style="stop-color:#22c55e;stop-opacity:0.95"/>
+      <stop offset="100%" style="stop-color:#166534;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="grassDeep" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#15803d;stop-opacity:0"/>
+      <stop offset="100%" style="stop-color:#14532d;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#grassGrad)" d="M0,120 C200,60 400,100 720,80 C1000,60 1200,100 1440,70 L1440,280 L0,280 Z"/>
+  <path fill="url(#grassDeep)" opacity="0.55" d="M0,180 C280,140 520,200 720,165 C920,130 1160,190 1440,150 L1440,280 L0,280 Z"/>
+  <path fill="#166534" opacity="0.25" d="M0,200 C360,170 600,220 900,195 C1100,175 1300,210 1440,195 L1440,280 L0,280 Z"/>
+</svg>

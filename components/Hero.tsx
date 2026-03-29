@@ -1,85 +1,68 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { ChevronDown, ArrowRight, BookOpen, User, LayoutDashboard, BrainCircuit, Target, BarChart2, CheckCircle2, Bookmark, Users, PlayCircle, Folder, LayoutTemplate } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import DashboardMockup from "./DashboardMockup";
 
 export default function Hero() {
-    const router = useRouter();
-
-
-
     return (
         <section
-            className="relative min-h-screen flex flex-col items-center justify-start text-center px-4 pt-8 animate-fadeIn overflow-hidden"
+            className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden"
             style={{
-                background: "linear-gradient(to bottom, #f0f7fa 0%, #e2f1f8 50%, #ffffff 100%)",
+                backgroundImage: "url('/bg.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
             }}
         >
-            {/* Subtle Full Background */}
-            <div 
-                className="absolute inset-0 z-0 opacity-15 pointer-events-none"
-                style={{
-                    backgroundImage: "url('/bg.png')",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                }}
-            />
+          
 
-            {/* Grassy Background at the bottom */}
-            <div 
-                className="absolute bottom-0 left-0 w-full h-[30vh] md:h-[40vh] z-20 pointer-events-none"
-                style={{
-                    backgroundImage: "url('/bg.png')",
-                    backgroundSize: "cover",
-                    backgroundPosition: "top center",
-                    backgroundRepeat: "no-repeat"
-                }}
-            />
-
-
-
-            {/* Hero Main Content */}
-            <div className="relative z-30 pt-28 pb-10 flex flex-col items-center">
-                
+            {/* Content */}
+            <div className="relative z-10 w-full flex flex-col items-center">
                 {/* Badge */}
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="mb-6 px-4 py-1.5 rounded-full bg-white border border-teal-200 text-sm font-medium text-[#64bdbd] flex items-center gap-2 shadow-sm cursor-pointer hover:shadow-md transition-shadow"
+                    className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-gray-200 text-sm font-medium text-gray-700 shadow-sm"
                 >
-                    <span className="bg-teal-50 text-[#64bdbd] px-2 py-0.5 rounded-full text-xs font-semibold">New</span>
-                    Join our AI-learner community <ArrowRight size={14} />
+                    <span className="font-semibold text-gray-900">New</span>
+                    <span className="text-gray-400">•</span>
+                    <span>Join our AI-learner community</span>
+                    <ArrowRight size={15} className="text-gray-600" />
                 </motion.div>
 
                 {/* Heading */}
-                <motion.h1 
+                <motion.h1
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.1 }}
-                    className="text-5xl md:text-[64px] font-semibold text-slate-800 leading-[1.1] max-w-3xl tracking-tight"
+                    className="text-4xl sm:text-5xl md:text-6xl font-semibold text-[#0f172a] leading-tight max-w-3xl tracking-tight"
                 >
-                    AI-powered learning <br className="hidden md:block" /> paths for everyone
+                    AI-powered learning paths for everyone
                 </motion.h1>
+
+                {/* Optional subtext (adds more realism like your reference) */}
+                <motion.p
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7, delay: 0.2 }}
+                    className="mt-4 text-gray-600 max-w-xl"
+                >
+                    Personalized learning journeys powered by AI. Build skills faster and smarter with Edopia.
+                </motion.p>
             </div>
 
             {/* Dashboard Mockup */}
-            <motion.div 
+            <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="relative z-10 w-full max-w-[1200px] mt-8 mb-32 group"
+                className="relative z-10 w-full max-w-[1100px] px-2 mt-10"
             >
-                {/* Glow effect */}
-                <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[80%] h-[300px] bg-sky-200/40 blur-[80px] rounded-full -z-10 transition-all duration-700 group-hover:bg-sky-300/40"></div>
-                
-                {/* Window container */}
-                <DashboardMockup />
+                <div className="rounded-2xl shadow-2xl border border-gray-200 bg-white/80 backdrop-blur-md p-2">
+                    <DashboardMockup />
+                </div>
             </motion.div>
-
         </section>
     );
 }

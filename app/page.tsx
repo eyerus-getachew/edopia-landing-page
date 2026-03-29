@@ -1,5 +1,6 @@
 import Hero from "../components/Hero";
 import Features from "../components/Features";
+import HowItWorks from "../components/Howitworks";
 import PricingPage from "../components/Pricing";
 import About from "../components/About";
 import TrustedBy from "../components/TrustedBy";
@@ -12,6 +13,7 @@ export default function Home() {
     <>
       <Hero />
       <Features />
+      <HowItWorks />
       <PricingPage />
       <section id="resources" className="py-20 text-center bg-white border-y">
           <h2 className="text-3xl font-bold mb-4">Resources</h2>

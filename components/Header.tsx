@@ -68,12 +68,12 @@ export default function Header() {
                     </motion.a>
 
                     <motion.a 
-                        href="#about"
-                        onClick={(e) => scrollToSection(e, "about")}
+                        href="#how-it-works"
+                        onClick={(e) => scrollToSection(e, "how-it-works")}
                         whileHover={{ scale: 1.05, color: "#1f2937" }} 
                         className="transition-colors cursor-pointer"
                     >
-                        About
+                        How it works
                     </motion.a>
                 </nav>
 
@@ -89,9 +89,9 @@ export default function Header() {
                     </motion.button>
                     <motion.button
                         onClick={() => router.push("/login")}
-                        whileHover={{ scale: 1.05, backgroundColor: "#4a9191" }}
+                        whileHover={{ scale: 1.05, backgroundColor: "#007aa3" }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-5 py-2 text-sm font-medium rounded-lg bg-[#64bdbd] text-white shadow-md transition-colors"
+                        className="px-5 py-2 text-sm font-medium rounded-lg bg-[#008cba] text-white shadow-md transition-colors"
                     >
                         Get started
                     </motion.button>

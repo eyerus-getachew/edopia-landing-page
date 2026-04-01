@@ -7,158 +7,178 @@ import {
   Timer,
   ChevronDown,
   ChevronUp,
-  BookOpen,
-  Clock,
   Code2,
 } from "lucide-react";
 
 export default function Features() {
   return (
-    <section id="features" className="py-32 px-6 bg-white">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+    <section id="features" className="w-full">
+      <div className="grid md:grid-cols-2 min-h-screen">
 
         {/* LEFT SIDE */}
-        <div>
-          <p className="text-sm text-[#008cba] font-medium mb-4 tracking-wide flex items-center gap-2">
-            <span className="font-light opacity-90" aria-hidden>|</span>
-            KEY FEATURES
-          </p>
-          <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 mb-10">
-            Features that make learning smarter
-          </h2>
+        <div className="flex items-center justify-end bg-white px-6 md:px-12 py-20 border-r border-gray-100">
+          <div className="max-w-xl w-full">
 
-          {/* Feature list */}
-          <div className="divide-y divide-gray-200 border-t border-gray-200">
+            <p className="text-xs text-[#008cba] font-medium mb-3 tracking-widest flex items-center gap-2">
+              <span className="opacity-80">|</span>
+              KEY FEATURES
+            </p>
 
-            <div className="py-4 flex justify-between items-center gap-4">
-              <div className="flex items-center gap-3 min-w-0">
-                <BarChart2
-                  className="w-5 h-5 shrink-0 text-gray-900"
-                  strokeWidth={1.5}
-                  aria-hidden
-                />
-                <span className="text-gray-800 font-medium">Adaptive progress engine</span>
-              </div>
-              <ChevronDown className="w-5 h-5 text-gray-400 shrink-0" strokeWidth={1.5} aria-hidden />
-            </div>
+            <h2 className="text-3xl md:text-[44px] leading-[1.15] font-semibold text-[#1a2f4a] mb-16">
+              Features that make learning smarter
+            </h2>
 
-            <div className="py-4">
-              <div className="flex justify-between items-center gap-4">
-                <div className="flex items-center gap-3 min-w-0">
-                  <Target
-                    className="w-5 h-5 shrink-0 text-gray-900"
-                    strokeWidth={1.5}
-                    aria-hidden
-                  />
-                  <span className="text-gray-900 font-medium">Personalized learning paths</span>
+            <div className="divide-y divide-gray-200">
+
+              {/* Item 1 */}
+              <div className="py-5 flex justify-between items-center cursor-pointer group">
+                <div className="flex items-center gap-3">
+                  <BarChart2 className="w-5 h-5 text-gray-700 group-hover:text-black" />
+                  <span className="text-gray-900 font-medium">
+                    Adaptive progress engine
+                  </span>
                 </div>
-                <ChevronUp className="w-5 h-5 text-gray-400 shrink-0" strokeWidth={1.5} aria-hidden />
+                <ChevronDown className="w-5 h-5 text-gray-400" />
               </div>
-              <p className="text-gray-500 text-sm mt-3 pl-8">
-                Edopia builds a step-by-step roadmap based on your skills, learning goals, and time commitment.
-              </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="mt-4 ml-8 px-4 py-2 border border-gray-200 rounded-full text-sm transition-colors hover:bg-gray-50"
-              >
-                Learn more →
-              </motion.button>
-            </div>
 
-            <div className="py-4 flex justify-between items-center gap-4">
-              <div className="flex items-center gap-3 min-w-0">
-                <MessageSquare
-                  className="w-5 h-5 shrink-0 text-gray-900"
-                  strokeWidth={1.5}
-                  aria-hidden
-                />
-                <span className="text-gray-800 font-medium">AI-chat assistant</span>
+              {/* Active Item */}
+              <div className="py-5">
+                <div className="flex justify-between items-center">
+                  <div className="flex items-center gap-3">
+                    <Target className="w-5 h-5 text-gray-900" />
+                    <span className="text-gray-900 font-semibold">
+                      Personalized learning paths
+                    </span>
+                  </div>
+                  <ChevronUp className="w-5 h-5 text-gray-400" />
+                </div>
+
+                <p className="text-gray-500 text-sm mt-3 pl-8 leading-relaxed">
+                  Edopia builds a step-by-step roadmap based on your skills,
+                  learning goals, and time commitment — so you always know what
+                  to do next.
+                </p>
+
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="mt-5 ml-8 px-5 py-2 rounded-lg text-sm font-medium border border-gray-200 bg-white hover:bg-gray-50 transition"
+                >
+                  Learn more →
+                </motion.button>
               </div>
-              <ChevronDown className="w-5 h-5 text-gray-400 shrink-0" strokeWidth={1.5} aria-hidden />
-            </div>
 
-            <div className="py-4 flex justify-between items-center gap-4">
-              <div className="flex items-center gap-3 min-w-0">
-                <Timer
-                  className="w-5 h-5 shrink-0 text-gray-900"
-                  strokeWidth={1.5}
-                  aria-hidden
-                />
-                <span className="text-gray-800 font-medium">Smart tracking & reminders</span>
+              {/* Item 3 */}
+              <div className="py-5 flex justify-between items-center cursor-pointer group">
+                <div className="flex items-center gap-3">
+                  <MessageSquare className="w-5 h-5 text-gray-700" />
+                  <span className="text-gray-900 font-medium">
+                    AI-chat assistant
+                  </span>
+                </div>
+                <ChevronDown className="w-5 h-5 text-gray-400" />
               </div>
-              <ChevronDown className="w-5 h-5 text-gray-400 shrink-0" strokeWidth={1.5} aria-hidden />
-            </div>
 
+              {/* Item 4 */}
+              <div className="py-5 flex justify-between items-center cursor-pointer group">
+                <div className="flex items-center gap-3">
+                  <Timer className="w-5 h-5 text-gray-700" />
+                  <span className="text-gray-900 font-medium">
+                    Smart tracking & reminders
+                  </span>
+                </div>
+                <ChevronDown className="w-5 h-5 text-gray-400" />
+              </div>
+
+            </div>
           </div>
         </div>
 
-        {/* RIGHT SIDE — bg fills frame; card inset at medium width */}
-        <div className="relative h-[540px] w-full min-w-0 rounded-3xl overflow-hidden">
+        {/* RIGHT SIDE */}
+        <div className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+
+          {/* BACKGROUND IMAGE */}
           <div
             className="absolute inset-0"
             style={{
               backgroundImage: "url('/bg.png')",
               backgroundSize: "cover",
-              backgroundPosition: "center",
+              backgroundPosition: "center bottom",
             }}
           />
-          <div className="absolute inset-0 bg-white/20" />
 
-          <div className="relative z-10 flex h-full items-center justify-center px-4 py-5 sm:px-6 sm:py-6">
-            <div className="w-full max-w-md max-h-[94%] overflow-y-auto rounded-2xl bg-white/90 backdrop-blur-md shadow-xl p-5 sm:p-6 border border-gray-200/80">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-gray-900">Fundamentals</h3>
-                <ChevronUp className="w-5 h-5 text-gray-400 shrink-0" strokeWidth={1.5} aria-hidden />
+          {/* VERY LIGHT DEPTH (no blur anymore) */}
+          <div className="absolute inset-0 bg-gradient-to-t from-white/5 to-transparent" />
+
+          {/* CARD SYSTEM */}
+          <div className="relative flex items-center justify-center">
+
+            {/* BACK GLASS LAYER */}
+            <div className="absolute w-[540px] h-[580px] rounded-3xl bg-white/30 border border-white/40 shadow-[0_25px_60px_rgba(0,0,0,0.15)]" />
+
+            {/* FRONT CARD */}
+            <div className="relative w-[500px] rounded-2xl bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] p-6 border border-gray-100">
+
+              {/* HEADER */}
+              <div className="flex items-center justify-between mb-5">
+                <h3 className="text-lg font-semibold text-gray-900">
+                  Fundamentals
+                </h3>
+                <ChevronUp className="w-5 h-5 text-gray-400" />
               </div>
 
-              <div className="border rounded-xl p-4 mb-4 bg-white/60">
-                <h4 className="font-medium text-gray-800 mb-2">Module overview</h4>
+              {/* OVERVIEW */}
+              <div className="border border-gray-200 rounded-xl p-4 mb-5 bg-gray-50">
+                <h4 className="font-medium text-gray-800 mb-2">
+                  Module overview
+                </h4>
                 <p className="text-sm text-gray-500 leading-relaxed">
-                  Learn the core concepts of programming, terminal commands, Git, and basic data types — the foundation for every back-end developer.
+                  Learn the core concepts of programming, terminal commands,
+                  Git, and basic data types — the foundation for every back-end developer.
                 </p>
-                <div className="flex flex-wrap gap-2 mt-3 text-xs">
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-sky-50 text-[#008cba] border border-sky-100 font-medium">
-                    <BookOpen className="w-3.5 h-3.5" strokeWidth={1.5} aria-hidden />
+
+                <div className="flex gap-2 mt-3 text-xs">
+                  <span className="px-3 py-1 rounded-md bg-white border text-[#008cba] font-medium">
                     4 Modules
                   </span>
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-sky-50 text-[#008cba] border border-sky-100 font-medium">
-                    <Clock className="w-3.5 h-3.5" strokeWidth={1.5} aria-hidden />
+                  <span className="px-3 py-1 rounded-md bg-white border text-[#008cba] font-medium">
                     12 days
                   </span>
                 </div>
               </div>
 
+              {/* LIST */}
               <div className="space-y-3">
-                <div className="flex items-center gap-3 border rounded-lg p-3 bg-white/80">
-                  <div className="w-9 h-9 rounded-lg bg-orange-500 flex items-center justify-center shrink-0">
-                    <Code2 className="w-4 h-4 text-white" strokeWidth={2} aria-hidden />
+                {[
+                  "Programming basics",
+                  "Terminal & CLI",
+                  "Git & version control",
+                  "Data types & variables",
+                ].map((item, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center gap-3 p-3 rounded-lg bg-gray-50 border border-gray-200"
+                  >
+                    <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center shadow-sm">
+                      <Code2 className="w-4 h-4 text-white" />
+                    </div>
+
+                    <div className="flex-1">
+                      <p className="text-gray-900 text-sm font-medium">
+                        {item}
+                      </p>
+                      <p className="text-xs text-gray-500">
+                        Short description here...
+                      </p>
+                    </div>
+
+                    <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">
+                      {i + 2} days
+                    </span>
                   </div>
-                  <span className="flex-1 text-gray-900 font-medium text-sm">Programming basics</span>
-                  <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded shrink-0">3 days</span>
-                </div>
-                <div className="flex items-center gap-3 border rounded-lg p-3 bg-white/80">
-                  <div className="w-9 h-9 rounded-lg bg-orange-500 flex items-center justify-center shrink-0">
-                    <Code2 className="w-4 h-4 text-white" strokeWidth={2} aria-hidden />
-                  </div>
-                  <span className="flex-1 text-gray-900 font-medium text-sm">Terminal & CLI</span>
-                  <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded shrink-0">2 days</span>
-                </div>
-                <div className="flex items-center gap-3 border rounded-lg p-3 bg-white/80">
-                  <div className="w-9 h-9 rounded-lg bg-orange-500 flex items-center justify-center shrink-0">
-                    <Code2 className="w-4 h-4 text-white" strokeWidth={2} aria-hidden />
-                  </div>
-                  <span className="flex-1 text-gray-900 font-medium text-sm">Git & version control</span>
-                  <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded shrink-0">3 days</span>
-                </div>
-                <div className="flex items-center gap-3 border rounded-lg p-3 bg-white/80">
-                  <div className="w-9 h-9 rounded-lg bg-orange-500 flex items-center justify-center shrink-0">
-                    <Code2 className="w-4 h-4 text-white" strokeWidth={2} aria-hidden />
-                  </div>
-                  <span className="flex-1 text-gray-900 font-medium text-sm">Data types & variables</span>
-                  <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded shrink-0">4 days</span>
-                </div>
+                ))}
               </div>
+
             </div>
           </div>
         </div>

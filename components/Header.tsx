@@ -1,100 +1,118 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
 
 export default function Header() {
     const router = useRouter();
+    const pathname = usePathname();
 
-    const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
-        // Only run on the home page when navigating to sections
-        if (window.location.pathname !== '/') {
+    const scrollToSection = (
+        e: React.MouseEvent<HTMLAnchorElement>,
+        targetId: string
+    ) => {
+        // If NOT on homepage → navigate first
+        if (pathname !== "/") {
             router.push(`/#${targetId}`);
             return;
         }
 
         e.preventDefault();
+
         const element = document.getElementById(targetId);
-        if (element) {
-            // Include an offset for the fixed header
-            const headerOffset = 80;
-            const elementPosition = element.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-            
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth"
-            });
+
+        if (!element) {
+            console.warn(`Section with id="${targetId}" not found`);
+            return;
         }
+
+        const headerOffset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+        });
+
+        // update URL without reload
+        window.history.pushState(null, "", `#${targetId}`);
     };
 
     return (
-        <header className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
-            <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-6 md:px-8">
-                
+        <header className="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-lg border-b border-gray-100">
+            <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-6 md:px-10">
+
                 {/* Logo */}
-                <Link href="/" className="flex items-center gap-2 flex-shrink-0 cursor-pointer">
-                    <img src="/nobg.png" alt="Edopia Logo" className="w-10 h-10 object-contain drop-shadow-sm" />
-                    <span className="font-bold text-xl text-slate-800 tracking-tight">Edopia</span>
+                <Link href="/" className="flex items-center gap-2 cursor-pointer">
+                    <img src="/nobg.png" alt="Edopia Logo" className="w-11 h-11 object-contain" />
+                    <span className="font-bold text-xl text-[#1a2f4a] tracking-tight">
+                        Edopia
+                    </span>
                 </Link>
 
-                {/* Menu */}
-                <nav className="hidden md:flex items-center gap-8 text-gray-600 font-medium text-sm whitespace-nowrap">
-                    <motion.a 
-                        href="#features" 
+                {/* Navigation */}
+                <nav className="hidden md:flex items-center gap-8 text-[#6b7280] font-medium text-sm">
+
+                    <motion.a
+                        href="#hero"
+                        onClick={(e) => scrollToSection(e, "hero")}
+                        whileHover={{ scale: 1.05 }}
+                        className="cursor-pointer hover:text-[#0ea5c6] transition"
+                    >
+                        Home
+                    </motion.a>
+
+                    <motion.a
+                        href="#features"
                         onClick={(e) => scrollToSection(e, "features")}
-                        whileHover={{ scale: 1.05, color: "#1f2937" }} 
-                        className="transition-colors cursor-pointer"
+                        whileHover={{ scale: 1.05 }}
+                        className="cursor-pointer hover:text-[#0ea5c6] transition"
                     >
                         Features
                     </motion.a>
-                    <motion.a 
+
+                    <motion.a
                         href="#pricing"
                         onClick={(e) => scrollToSection(e, "pricing")}
-                        whileHover={{ scale: 1.05, color: "#1f2937" }} 
-                        className="transition-colors cursor-pointer"
+                        whileHover={{ scale: 1.05 }}
+                        className="cursor-pointer hover:text-[#0ea5c6] transition"
                     >
                         Plans & Pricing
                     </motion.a>
-                    <motion.a 
-                        href="#resources"
-                        onClick={(e) => scrollToSection(e, "resources")}
-                        whileHover={{ scale: 1.05, color: "#1f2937" }} 
-                        className="transition-colors flex items-center gap-1 cursor-pointer"
-                    >
-                        Resources <ChevronDown size={14} className="text-gray-400" />
-                    </motion.a>
 
-                    <motion.a 
-                        href="#how-it-works"
-                        onClick={(e) => scrollToSection(e, "how-it-works")}
-                        whileHover={{ scale: 1.05, color: "#1f2937" }} 
-                        className="transition-colors cursor-pointer"
+                    <motion.a
+                        href="#about"
+                        onClick={(e) => scrollToSection(e, "about")}
+                        whileHover={{ scale: 1.05 }}
+                        className="cursor-pointer hover:text-[#0ea5c6] transition"
                     >
-                        How it works
+                        About
                     </motion.a>
                 </nav>
 
                 {/* Actions */}
-                <div className="flex items-center gap-4 flex-shrink-0">
+                <div className="flex items-center gap-4">
+
                     <motion.button
                         onClick={() => router.push("/login")}
-                        whileHover={{ scale: 1.05, backgroundColor: "#f8fafc" }}
+                        whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-5 py-2 text-sm font-medium border border-gray-200 rounded-lg text-gray-700 bg-white transition-all shadow-sm"
+                        className="px-5 py-2 text-sm border border-gray-200 rounded-lg text-gray-700 bg-white hover:bg-gray-50 shadow-sm"
                     >
-                        Sign-in
+                        Sign in
                     </motion.button>
+
                     <motion.button
                         onClick={() => router.push("/login")}
-                        whileHover={{ scale: 1.05, backgroundColor: "#007aa3" }}
+                        whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-5 py-2 text-sm font-medium rounded-lg bg-[#008cba] text-white shadow-md transition-colors"
+                        className="px-5 py-2 text-sm rounded-lg bg-[#5FA8A6] text-white hover:bg-[#4A8F8D] shadow-sm"
                     >
                         Get started
                     </motion.button>
+
                 </div>
             </div>
         </header>

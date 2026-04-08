@@ -32,6 +32,7 @@ const PROGRESS_DATA = [
 export default function Hero() {
     return (
         <section
+            id="hero"
             className="relative min-h-screen flex flex-col items-center pt-20 pb-32 overflow-hidden bg-[#fdfdfd]"
             style={{
                 backgroundImage: "url('/bg.png')",
@@ -221,7 +222,7 @@ export default function Hero() {
                             <div className="flex justify-between items-start mb-2">
                                 <div className="flex items-center gap-2">
                                     <Sparkles size={14} className="text-cyan-500" />
-                                    <span className="text-xs font-bold">Microten AI</span>
+                                    <span className="text-xs font-bold">Edopia AI</span>
                                 </div>
                                 <X size={12} className="text-gray-300" />
                             </div>

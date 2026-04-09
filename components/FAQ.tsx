@@ -53,9 +53,9 @@ export default function FAQ() {
                 </h2>
 
                 {/* Main Box */}
-                <div className="bg-white rounded-[28px] border border-gray-200 p-4 md:p-6 flex gap-6 md:gap-8 shadow-[0_10px_30px_rgba(0,0,0,0.04)]">
+                <div className="bg-white rounded-[28px] border border-gray-200 p-4 md:p-6 flex flex-col md:flex-row gap-6 md:gap-8 shadow-[0_10px_30px_rgba(0,0,0,0.04)]">
                     {/* Sidebar */}
-                    <div className="w-[28%] space-y-3 pr-6">
+                    <div className="w-full md:w-[28%] space-y-3 md:pr-6 whitespace-nowrap overflow-x-auto md:whitespace-normal no-scrollbar">
                         {categories.map((cat, i) => (
                             <motion.button
                                 key={i}
@@ -76,7 +76,7 @@ export default function FAQ() {
                     </div>
 
                     {/* FAQ Content */}
-                    <div className="w-[72%] border border-gray-200 rounded-xl overflow-hidden">
+                    <div className="w-full md:w-[72%] border border-gray-200 rounded-xl overflow-hidden">
 
                         {faqs.map((faq, i) => (
                             <div key={i}>

@@ -60,7 +60,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 40, scale: 0.98 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="w-[95%] max-w-[950px] rounded-3xl border border-gray-200/70 bg-white/90 backdrop-blur-xl 
+                className="w-[95%] w-full max-w-[950px] rounded-3xl border border-gray-200/70 bg-white/90 backdrop-blur-xl 
                   shadow-[0_20px_60px_rgba(0,0,0,0.06),0_2px_6px_rgba(0,0,0,0.04)] 
                   overflow-hidden flex flex-col"
             >
@@ -88,9 +88,9 @@ export default function Hero() {
                     </div>
                 </div>
 
-                <div className="flex h-[500px]">
+                <div className="flex flex-col lg:flex-row h-auto lg:h-[500px]">
                     {/* LEFT SIDEBAR */}
-                    <aside className="w-[230px] border-r border-gray-100/70 px-4 py-5 flex flex-col gap-8 bg-gradient-to-b from-gray-50 to-white">
+                    <aside className="hidden lg:flex w-[230px] border-r border-gray-100/70 px-4 py-5 flex-col gap-8 bg-gradient-to-b from-gray-50 to-white">
                         {/* User Profile */}
                         <div className="flex items-center gap-3 p-2 bg-white border border-gray-100 rounded-xl">
                             <div className="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center font-bold text-xs">HJ</div>
@@ -117,9 +117,9 @@ export default function Hero() {
                     </aside>
 
                     {/* CENTER CONTENT */}
-                    <main className="flex-1 p-6 overflow-y-auto">
-                        <div className="flex items-start justify-between mb-8">
-                            <div className="flex gap-4">
+                    <main className="flex-1 p-4 md:p-6 overflow-y-auto">
+                        <div className="flex flex-col md:flex-row items-start justify-between mb-8 gap-4">
+                            <div className="flex flex-col md:flex-row gap-4">
                                 <div className="w-12 h-12 bg-gray-50 border border-gray-100 rounded-xl flex items-center justify-center">
                                     <LayoutDashboard className="text-cyan-500 w-6 h-6" />
                                 </div>
@@ -157,7 +157,7 @@ export default function Hero() {
                         </div>
 
                         {/* TABS */}
-                        <div className="flex gap-2 mb-6 p-1 bg-gray-50 w-fit rounded-xl border border-gray-100">
+                        <div className="flex gap-2 mb-6 p-1 bg-gray-50 flex-wrap md:flex-nowrap w-full md:w-fit rounded-xl border border-gray-100 overflow-x-auto no-scrollbar">
                             {["Curriculums", "Syntax & tools", "Project-based", "Assesment", "Tutorials"].map((tab, i) => (
                                 <button key={tab} className={`px-4 py-2 rounded-lg text-[11px] font-bold ${i === 0 ? "bg-white shadow-sm" : "text-gray-400"}`}>
                                     {tab}
@@ -166,8 +166,8 @@ export default function Hero() {
                         </div>
 
                         {/* GRID MODULES & PROGRESS */}
-                        <div className="grid grid-cols-5 gap-6">
-                            <div className="col-span-3 space-y-4">
+                        <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+                            <div className="md:col-span-3 space-y-4">
                                 <div className="border border-gray-100 rounded-xl overflow-hidden">
                                     <div className="flex justify-between items-center p-4 bg-gray-50/50">
                                         <h3 className="text-sm font-bold">Fundamentals</h3>
@@ -189,7 +189,7 @@ export default function Hero() {
                             </div>
 
                             {/* Percentage Donut */}
-                            <div className="col-span-2 bg-white border border-gray-100 rounded-xl p-4">
+                            <div className="md:col-span-2 bg-white border border-gray-100 rounded-xl p-4">
                                 <p className="text-[11px] font-bold mb-4">Percentage</p>
                                 <div className="h-[140px] relative">
                                     <ProgressChart data={PROGRESS_DATA} />
@@ -217,7 +217,7 @@ export default function Hero() {
                     </main>
 
                     {/* RIGHT SIDEBAR - AI COACH */}
-                    <aside className="w-[300px] border-l border-gray-100 bg-[#f8fbff] p-5 flex flex-col gap-4">
+                    <aside className="hidden md:flex w-[300px] border-l border-gray-100 bg-[#f8fbff] p-5 flex-col gap-4">
                         <div className="bg-white border border-blue-100 rounded-xl p-4 shadow-sm">
                             <div className="flex justify-between items-start mb-2">
                                 <div className="flex items-center gap-2">

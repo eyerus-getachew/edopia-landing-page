@@ -7,7 +7,7 @@ export const metadata = {
   title: "Edopia",
   description: "Learning platform",
   icons: {
-    icon: "/icon.png", // 👈 make sure this file exists
+    icon: "/icon.png",
   },
 };
 

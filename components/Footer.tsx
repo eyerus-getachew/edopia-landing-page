@@ -41,7 +41,7 @@ export default function Footer() {
         <div className="bg-white pt-20">
 
             {/* TOP SECTION */}
-            <div className="relative max-w-6xl mx-auto px-10 py-16 flex justify-between items-start">
+            <div className="relative max-w-6xl mx-auto px-6 md:px-10 py-16 flex flex-col md:flex-row justify-between items-start gap-12">
 
                 {/* Pattern */}
                 <img
@@ -118,8 +118,8 @@ export default function Footer() {
             </div>
 
             {/* LINKS SECTION */}
-            <div className="bg-[#f5f7fa] py-14">
-                <div className="max-w-6xl mx-auto grid grid-cols-5 gap-10 text-sm text-[#6b7280]">
+            <div className="bg-[#f5f7fa] py-14 px-6 md:px-10">
+                <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 text-sm text-[#6b7280]">
 
                     <div>
                         <h4 className="font-semibold text-[#1a2f4a] mb-4">Menus</h4>

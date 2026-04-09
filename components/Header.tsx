@@ -1,12 +1,14 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
 export default function Header() {
     const router = useRouter();
     const pathname = usePathname();
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const scrollToSection = (
         e: React.MouseEvent<HTMLAnchorElement>,
@@ -38,6 +40,7 @@ export default function Header() {
 
         // update URL without reload
         window.history.pushState(null, "", `#${targetId}`);
+        setIsMobileMenuOpen(false);
     };
 
     return (
@@ -93,7 +96,7 @@ export default function Header() {
                 </nav>
 
                 {/* Actions */}
-                <div className="flex items-center gap-4">
+                <div className="hidden md:flex items-center gap-4">
 
                     <motion.button
                         onClick={() => router.push("/login")}
@@ -114,7 +117,51 @@ export default function Header() {
                     </motion.button>
 
                 </div>
+
+                {/* Mobile Menu Button */}
+                <div className="md:hidden flex items-center">
+                    <button
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        className="p-2 text-gray-600 hover:text-[#0ea5c6] transition-colors focus:outline-none"
+                    >
+                        {isMobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
+                    </button>
+                </div>
             </div>
+
+            {/* Mobile Navigation Dropdown */}
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        className="md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-lg border-b border-gray-100 shadow-lg"
+                    >
+                        <nav className="flex flex-col items-center py-6 gap-6 text-[#1a2f4a] font-medium text-base">
+                            <a href="#hero" onClick={(e) => scrollToSection(e, "hero")} className="hover:text-[#0ea5c6] transition">Home</a>
+                            <a href="#features" onClick={(e) => scrollToSection(e, "features")} className="hover:text-[#0ea5c6] transition">Features</a>
+                            <a href="#pricing" onClick={(e) => scrollToSection(e, "pricing")} className="hover:text-[#0ea5c6] transition">Plans & Pricing</a>
+                            <a href="#about" onClick={(e) => scrollToSection(e, "about")} className="hover:text-[#0ea5c6] transition">About</a>
+                            
+                            <div className="flex flex-col w-full px-8 gap-3 mt-4">
+                                <button
+                                    onClick={() => router.push("/login")}
+                                    className="w-full py-3 text-sm border border-gray-200 rounded-lg text-gray-700 bg-white hover:bg-gray-50 shadow-sm font-semibold"
+                                >
+                                    Sign in
+                                </button>
+                                <button
+                                    onClick={() => router.push("/login")}
+                                    className="w-full py-3 text-sm rounded-lg bg-[#5FA8A6] text-white hover:bg-[#4A8F8D] shadow-sm font-semibold"
+                                >
+                                    Get started
+                                </button>
+                            </div>
+                        </nav>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </header>
     );
 }

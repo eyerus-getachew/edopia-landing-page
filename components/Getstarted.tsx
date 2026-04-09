@@ -173,9 +173,9 @@ export default function Getstarted() {
           </div>
 
           {/* BACKGROUND STACK EFFECTS */}
-          <div className="absolute top-0 left-6 right-6 h-full bg-white rounded-[28px] shadow-[0_25px_60px_rgba(0,0,0,0.08)] translate-y-6 -z-10" />
-          <div className="absolute top-0 left-12 right-12 h-full bg-white rounded-[28px] shadow-[0_20px_50px_rgba(0,0,0,0.06)] translate-y-12 -z-20" />
-          <div className="absolute top-0 left-20 right-20 h-full bg-white rounded-[28px] shadow-[0_15px_40px_rgba(0,0,0,0.05)] translate-y-16 -z-30" />
+          <div className="absolute top-0 left-4 right-4 md:left-6 md:right-6 h-full bg-white rounded-[28px] shadow-[0_25px_60px_rgba(0,0,0,0.08)] translate-y-6 -z-10" />
+          <div className="absolute top-0 left-8 right-8 md:left-12 md:right-12 h-full bg-white rounded-[28px] shadow-[0_20px_50px_rgba(0,0,0,0.06)] translate-y-12 -z-20" />
+          <div className="absolute top-0 left-12 right-12 md:left-20 md:right-20 h-full bg-white rounded-[28px] shadow-[0_15px_40px_rgba(0,0,0,0.05)] translate-y-16 -z-30" />
         </div>
       </div>
     </section>

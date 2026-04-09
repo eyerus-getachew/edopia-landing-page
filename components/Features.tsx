@@ -114,10 +114,10 @@ export default function Features() {
           <div className="relative flex items-center justify-center">
 
             {/* BACK GLASS LAYER */}
-            <div className="absolute w-[540px] h-[580px] rounded-3xl bg-white/30 border border-white/40 shadow-[0_25px_60px_rgba(0,0,0,0.15)]" />
+            <div className="absolute w-[90%] md:w-[540px] h-full max-h-[580px] rounded-3xl bg-white/30 border border-white/40 shadow-[0_25px_60px_rgba(0,0,0,0.15)]" />
 
             {/* FRONT CARD */}
-            <div className="relative w-[500px] rounded-2xl bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] p-6 border border-gray-100">
+            <div className="relative w-[95%] sm:w-full max-w-[500px] rounded-2xl bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] p-6 border border-gray-100 mx-4 md:mx-0">
 
               {/* HEADER */}
               <div className="flex items-center justify-between mb-5">

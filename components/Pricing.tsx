@@ -23,7 +23,7 @@ export default function Pricing() {
 
             {/* Container */}
             <div className="max-w-7xl mx-auto bg-white border border-gray-100/60 rounded-[2rem] shadow-md p-5 md:p-8">
-                <div className="grid md:grid-cols-4">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-0">
 
                     {/* FEATURES */}
                     <div className="hidden md:flex flex-col justify-end text-left px-6 pb-6 text-[15px] text-gray-900">

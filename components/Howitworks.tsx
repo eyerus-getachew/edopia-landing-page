@@ -18,7 +18,7 @@ export default function HeroDashboard() {
       style={{ backgroundImage: "url('/bg.png')" }}
     >
       {/* MAIN CONTAINER */}
-      <div className="w-full max-w-7xl mx-auto px-6 flex items-start justify-between gap-20">
+      <div className="w-full max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12 lg:gap-20">
 
         {/* LEFT SIDE */}
         <motion.div
@@ -59,10 +59,10 @@ export default function HeroDashboard() {
 
         {/* RIGHT SIDE */}
         <motion.div
-          initial={{ opacity: 0, x: 80 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="relative w-[760px] mt-[-20px]"
+            initial={{ opacity: 0, x: 80 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="relative w-full lg:w-[760px] mt-0 lg:mt-[-20px]"
         >
 
           {/* FLOATING EFFECT */}
@@ -90,10 +90,10 @@ export default function HeroDashboard() {
               </div>
 
               {/* BODY */}
-              <div className="grid grid-cols-[220px_1fr] min-h-[460px]">
+              <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] min-h-[460px]">
 
                 {/* SIDEBAR */}
-                <div className="border-r border-gray-200 p-4 bg-white">
+                <div className="hidden md:block border-r border-gray-200 p-4 bg-white">
 
                   <div className="flex items-center gap-2 mb-6">
                     <div className="w-9 h-9 border rounded-md flex items-center justify-center text-xs font-bold">

@@ -1,16 +1,46 @@
 "use client";
-import { motion } from "framer-motion";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
-  BarChart2,
-  Target,
-  MessageSquare,
-  Timer,
+  BookOpen,
+  Brain,
+  Trophy,
+  Users,
   ChevronDown,
   ChevronUp,
-  Code2,
 } from "lucide-react";
 
 export default function Features() {
+  const [active, setActive] = useState(0);
+
+  const features = [
+    {
+      title: "AI-powered courses",
+      icon: BookOpen,
+      description:
+        "Generate complete courses instantly with Biruh, your AI course agent.",
+    },
+    {
+      title: "Real-time AI tutor",
+      icon: Brain,
+      description:
+        "Learn with Edopis, your personal AI tutor with real-time help.",
+    },
+    {
+      title: "Gamified learning",
+      icon: Trophy,
+      description:
+        "Earn points, climb leaderboards, and stay motivated.",
+    },
+    {
+      title: "Parent Controls",
+      icon: Users,
+      description:
+        "Parents can track progress and manage learning.",
+    },
+  ];
+
   return (
     <section id="features" className="w-full">
       <div className="grid md:grid-cols-2 min-h-screen">
@@ -20,166 +50,219 @@ export default function Features() {
           <div className="max-w-xl w-full">
 
             <p className="text-xs text-[#008cba] font-medium mb-3 tracking-widest flex items-center gap-2">
-              <span className="opacity-80">|</span>
-              KEY FEATURES
+              <span>|</span> KEY FEATURES
             </p>
 
-            <h2 className="text-3xl md:text-[44px] leading-[1.15] font-semibold text-[#1a2f4a] mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-[44px] leading-[1.15] font-semibold text-[#1a2f4a] mb-16"
+            >
               Features that make learning smarter
-            </h2>
+            </motion.h2>
 
-            <div className="divide-y divide-gray-200">
+            <motion.div
+              className="divide-y divide-gray-200"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={{
+                visible: { transition: { staggerChildren: 0.1 } },
+                hidden: {}
+              }}
+            >
+              {features.map((feature, index) => {
+                const Icon = feature.icon;
+                const isActive = active === index;
 
-              {/* Item 1 */}
-              <div className="py-5 flex justify-between items-center cursor-pointer group">
-                <div className="flex items-center gap-3">
-                  <BarChart2 className="w-5 h-5 text-gray-700 group-hover:text-black" />
-                  <span className="text-gray-900 font-medium">
-                    Adaptive progress engine
-                  </span>
-                </div>
-                <ChevronDown className="w-5 h-5 text-gray-400" />
-              </div>
+                return (
+                  <motion.div
+                    key={index}
+                    className="py-5"
+                    variants={{
+                      hidden: { opacity: 0, x: -20 },
+                      visible: { opacity: 1, x: 0 }
+                    }}
+                  >
+                    <motion.div
+                      onClick={() => setActive(index)}
+                      className="flex justify-between items-center cursor-pointer group"
+                      whileHover={{ x: 4 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      <div className="flex items-center gap-3">
+                        <Icon
+                          className={`w-5 h-5 ${isActive
+                            ? "text-[#0ea5e9]"
+                            : "text-gray-600 group-hover:text-gray-900"
+                            }`}
+                        />
+                        <span
+                          className={`${isActive
+                            ? "font-semibold text-gray-900"
+                            : "font-medium text-gray-900"
+                            }`}
+                        >
+                          {feature.title}
+                        </span>
+                      </div>
 
-              {/* Active Item */}
-              <div className="py-5">
-                <div className="flex justify-between items-center">
-                  <div className="flex items-center gap-3">
-                    <Target className="w-5 h-5 text-gray-900" />
-                    <span className="text-gray-900 font-semibold">
-                      Personalized learning paths
-                    </span>
-                  </div>
-                  <ChevronUp className="w-5 h-5 text-gray-400" />
-                </div>
+                      {isActive ? (
+                        <ChevronUp className="w-5 h-5 text-gray-400" />
+                      ) : (
+                        <ChevronDown className="w-5 h-5 text-gray-400" />
+                      )}
+                    </motion.div>
 
-                <p className="text-gray-500 text-sm mt-3 pl-8 leading-relaxed">
-                  Edopia builds a step-by-step roadmap based on your skills,
-                  learning goals, and time commitment — so you always know what
-                  to do next.
-                </p>
-
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="mt-5 ml-8 px-5 py-2 rounded-lg text-sm font-medium border border-gray-200 bg-white hover:bg-gray-50 transition"
-                >
-                  Learn more →
-                </motion.button>
-              </div>
-
-              {/* Item 3 */}
-              <div className="py-5 flex justify-between items-center cursor-pointer group">
-                <div className="flex items-center gap-3">
-                  <MessageSquare className="w-5 h-5 text-gray-700" />
-                  <span className="text-gray-900 font-medium">
-                    AI-chat assistant
-                  </span>
-                </div>
-                <ChevronDown className="w-5 h-5 text-gray-400" />
-              </div>
-
-              {/* Item 4 */}
-              <div className="py-5 flex justify-between items-center cursor-pointer group">
-                <div className="flex items-center gap-3">
-                  <Timer className="w-5 h-5 text-gray-700" />
-                  <span className="text-gray-900 font-medium">
-                    Smart tracking & reminders
-                  </span>
-                </div>
-                <ChevronDown className="w-5 h-5 text-gray-400" />
-              </div>
-
-            </div>
+                    <AnimatePresence initial={false}>
+                      {isActive && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                          className="overflow-hidden"
+                        >
+                          <div className="mt-3 pl-8">
+                            <p className="text-gray-500 text-sm">
+                              {feature.description}
+                            </p>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
           </div>
         </div>
 
         {/* RIGHT SIDE */}
-        <div className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+        <div className="relative w-full flex items-center justify-center overflow-hidden">
 
-          {/* BACKGROUND IMAGE */}
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: "url('/bg.png')",
-              backgroundSize: "cover",
-              backgroundPosition: "center bottom",
-            }}
-          />
-
-          {/* VERY LIGHT DEPTH (no blur anymore) */}
+          {/* BACKGROUND */}
+          <div className="absolute inset-0 bg-[url('/bg.png')] bg-cover bg-bottom" />
           <div className="absolute inset-0 bg-gradient-to-t from-white/5 to-transparent" />
 
-          {/* CARD SYSTEM */}
-          <div className="relative flex items-center justify-center">
+          {/* WRAPPER */}
+          <div className="relative p-8">
 
-            {/* BACK GLASS LAYER */}
-            <div className="absolute w-[90%] md:w-[540px] h-full max-h-[580px] rounded-3xl bg-white/30 border border-white/40 shadow-[0_25px_60px_rgba(0,0,0,0.15)]" />
+            {/* GLASS BACKGROUND */}
+            <div className="absolute inset-0 rounded-3xl bg-white/30 border border-white/40 backdrop-blur-xl shadow-[0_25px_60px_rgba(0,0,0,0.15)]" />
 
             {/* FRONT CARD */}
-            <div className="relative w-[95%] sm:w-full max-w-[500px] rounded-2xl bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] p-6 border border-gray-100 mx-4 md:mx-0">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="relative w-[95%] sm:w-full max-w-[500px] rounded-2xl bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] p-7 border border-gray-100"
+            >
 
-              {/* HEADER */}
-              <div className="flex items-center justify-between mb-5">
-                <h3 className="text-lg font-semibold text-gray-900">
-                  Fundamentals
-                </h3>
-                <ChevronUp className="w-5 h-5 text-gray-400" />
-              </div>
+              {/* CONTENT */}
 
-              {/* OVERVIEW */}
-              <div className="border border-gray-200 rounded-xl p-4 mb-5 bg-gray-50">
-                <h4 className="font-medium text-gray-800 mb-2">
-                  Module overview
-                </h4>
-                <p className="text-sm text-gray-500 leading-relaxed">
-                  Learn the core concepts of programming, terminal commands,
-                  Git, and basic data types — the foundation for every back-end developer.
-                </p>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={active}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -15 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                >
+                  {active === 0 && (
+                    <>
+                      <h3 className="text-lg font-semibold mb-5">
+                        AI Course System
+                      </h3>
 
-                <div className="flex gap-2 mt-3 text-xs">
-                  <span className="px-3 py-1 rounded-md bg-white border text-[#008cba] font-medium">
-                    4 Modules
-                  </span>
-                  <span className="px-3 py-1 rounded-md bg-white border text-[#008cba] font-medium">
-                    12 days
-                  </span>
-                </div>
-              </div>
+                      <div className="bg-gray-50 border rounded-xl p-4 mb-5">
+                        <p className="text-sm text-gray-500">
+                          Structured AI-generated courses with chapters, quizzes, and study guides.
+                        </p>
+                      </div>
 
-              {/* LIST */}
-              <div className="space-y-3">
-                {[
-                  "Programming basics",
-                  "Terminal & CLI",
-                  "Git & version control",
-                  "Data types & variables",
-                ].map((item, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center gap-3 p-3 rounded-lg bg-gray-50 border border-gray-200"
-                  >
-                    <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center shadow-sm">
-                      <Code2 className="w-4 h-4 text-white" />
-                    </div>
+                      <div className="space-y-3">
+                        {["Chapters", "Quizzes", "Flashcards"].map((item, i) => (
+                          <div key={i} className="p-3 border rounded-lg bg-gray-50 text-sm">
+                            {item}
+                          </div>
+                        ))}
+                      </div>
+                    </>
+                  )}
 
-                    <div className="flex-1">
-                      <p className="text-gray-900 text-sm font-medium">
-                        {item}
-                      </p>
-                      <p className="text-xs text-gray-500">
-                        Short description here...
-                      </p>
-                    </div>
+                  {active === 1 && (
+                    <>
+                      <h3 className="text-lg font-semibold mb-5">
+                        AI Tutor
+                      </h3>
 
-                    <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">
-                      {i + 2} days
-                    </span>
-                  </div>
-                ))}
-              </div>
+                      <div className="bg-gray-50 border rounded-xl p-4 mb-5">
+                        <p className="text-sm text-gray-500">
+                          Real-time tutoring with explanations and interactive help.
+                        </p>
+                      </div>
 
-            </div>
+                      <div className="space-y-3">
+                        {["Ask questions", "Get help", "Practice"].map((item, i) => (
+                          <div key={i} className="p-3 border rounded-lg bg-gray-50 text-sm">
+                            {item}
+                          </div>
+                        ))}
+                      </div>
+                    </>
+                  )}
+
+                  {active === 2 && (
+                    <>
+                      <h3 className="text-lg font-semibold mb-5">
+                        Gamification
+                      </h3>
+
+                      <div className="bg-gray-50 border rounded-xl p-4 mb-5">
+                        <p className="text-sm text-gray-500">
+                          Earn rewards, climb ranks, and stay motivated.
+                        </p>
+                      </div>
+
+                      <div className="space-y-3">
+                        {["Earn points", "Leaderboards", "Rewards"].map((item, i) => (
+                          <div key={i} className="p-3 border rounded-lg bg-gray-50 text-sm">
+                            {item}
+                          </div>
+                        ))}
+                      </div>
+                    </>
+                  )}
+
+                  {active === 3 && (
+                    <>
+                      <h3 className="text-lg font-semibold mb-5">
+                        Parent Dashboard
+                      </h3>
+
+                      <div className="bg-gray-50 border rounded-xl p-4 mb-5">
+                        <p className="text-sm text-gray-500">
+                          Monitor student progress and manage learning.
+                        </p>
+                      </div>
+
+                      <div className="space-y-3">
+                        {["Track progress", "Reports", "Subscriptions"].map((item, i) => (
+                          <div key={i} className="p-3 border rounded-lg bg-gray-50 text-sm">
+                            {item}
+                          </div>
+                        ))}
+                      </div>
+                    </>
+                  )}
+
+                </motion.div>
+              </AnimatePresence>
+
+            </motion.div>
           </div>
         </div>
 

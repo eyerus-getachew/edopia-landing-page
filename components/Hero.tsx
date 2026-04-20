@@ -23,11 +23,11 @@ import dynamic from "next/dynamic";
 const ProgressChart = dynamic(() => import("./ProgressChart"), { ssr: false });
 
 const PROGRESS_DATA = [
-    { name: "Fundamentals", value: 10, color: "#1199a4" },
-    { name: "Back-End Basics", value: 25, color: "#0ea5e9" },
-    { name: "Database", value: 15, color: "#3b82f6" },
-    { name: "Authentication", value: 20, color: "#6366f1" },
-];
+    { name: "Numbers", value: 20, color: "#1199a4" },
+    { name: "Equations", value: 25, color: "#0ea5e9" },
+    { name: "Word Problems", value: 15, color: "#3b82f6" },
+    { name: "Practice", value: 20, color: "#6366f1" },
+  ];
 
 export default function Hero() {
     return (
@@ -44,7 +44,7 @@ export default function Hero() {
             <div className="mb-8 bg-white/80 backdrop-blur border border-gray-200 px-4 py-1.5 rounded-full flex items-center gap-2 text-[13px] font-medium text-gray-600 shadow-sm">
                 <span className="text-teal-600 font-bold">New</span>
                 <span className="text-gray-300">|</span>
-                Join our AI-learner community <span className="ml-1">→</span>
+                Learn with AI courses and a personal tutor  <span className="ml-1">→</span>
             </div>
 
             <motion.h1
@@ -52,7 +52,7 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 className="text-[52px] md:text-[60px] leading-[1.1] font-bold text-[#0f172a] text-center mb-12 tracking-tight"
             >
-                AI-powered learning <br /> paths for everyone
+               Learn smarter with AI <br /> courses and a personal tutor
             </motion.h1>
 
             {/* MAIN DASHBOARD CONTAINER */}
@@ -76,7 +76,7 @@ export default function Hero() {
                             <span className="font-bold text-sm tracking-tight">Edopia</span>
                         </div>
                         <div className="text-[11px] text-gray-400">
-                            Add new path / <span className="text-gray-900 font-medium">Back-end dev</span>
+                            Create your learning path / <span className="text-gray-900 font-medium">Mathematics </span>
                         </div>
                     </div>
                     <div className="flex items-center gap-4 text-gray-400">
@@ -93,10 +93,10 @@ export default function Hero() {
                     <aside className="hidden lg:flex w-[230px] border-r border-gray-100/70 px-4 py-5 flex-col gap-8 bg-gradient-to-b from-gray-50 to-white">
                         {/* User Profile */}
                         <div className="flex items-center gap-3 p-2 bg-white border border-gray-100 rounded-xl">
-                            <div className="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center font-bold text-xs">HJ</div>
+                            <div className="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center font-bold text-xs">ST</div>
                             <div className="overflow-hidden">
-                                <p className="text-xs font-bold truncate">Henry Joe</p>
-                                <p className="text-[10px] text-gray-400 truncate">henry@gmail.com</p>
+                                <p className="text-xs font-bold truncate">Solomon Tesfaye</p>
+                                <p className="text-[10px] text-gray-400 truncate">Solomon@gmail.com</p>
                             </div>
                         </div>
 
@@ -124,13 +124,13 @@ export default function Hero() {
                                     <LayoutDashboard className="text-cyan-500 w-6 h-6" />
                                 </div>
                                 <div>
-                                    <h2 className="text-lg font-bold text-gray-900">Back-end developer learning path</h2>
+                                    <h2 className="text-lg font-bold text-gray-900">Mathematics learning path</h2>
                                     <p className="text-[11px] text-gray-400 max-w-md mt-1">
-                                        Start from <span className="text-cyan-600">server basics, node.js, express, databases, deployment</span>.
+                                        Learn step by step with <span className="text-cyan-600">AI-generated lessons, quizzes and guided explanations.</span>.
                                     </p>
                                     <div className="flex gap-2 mt-4">
-                                        <button className="bg-cyan-500 text-white px-4 py-2 rounded-lg text-xs font-bold">Start learning</button>
-                                        <button className="border border-gray-200 px-4 py-2 rounded-lg text-xs font-bold">Edit preference</button>
+                                        <button className="bg-cyan-500 text-white px-4 py-2 rounded-lg text-xs font-bold">Start course</button>
+                                        <button className="border border-gray-200 px-4 py-2 rounded-lg text-xs font-bold">Customize learning </button>
                                     </div>
                                 </div>
                             </div>
@@ -139,19 +139,19 @@ export default function Hero() {
                             <div className="grid grid-cols-2 gap-x-8 gap-y-2 bg-gray-50/50 p-4 rounded-xl border border-gray-100 text-[11px]">
                                 <div>
                                     <p className="text-gray-400">Deadline</p>
-                                    <p className="font-bold">3 months</p>
+                                    <p className="font-bold">2 weeks</p>
                                 </div>
                                 <div>
                                     <p className="text-gray-400">Learning goal</p>
-                                    <p className="font-bold">Back-end dev</p>
+                                    <p className="font-bold">Algebra basics</p>
                                 </div>
                                 <div>
                                     <p className="text-gray-400">Available Time</p>
-                                    <p className="font-bold">1-2 Hours/day</p>
+                                    <p className="font-bold">1 hour/day</p>
                                 </div>
                                 <div>
                                     <p className="text-gray-400">Current level</p>
-                                    <p className="font-bold">Beginner</p>
+                                    <p className="font-bold"> Grade 8 </p>
                                 </div>
                             </div>
                         </div>
@@ -176,14 +176,14 @@ export default function Hero() {
                                     <div className="p-4 space-y-4">
                                         <div className="bg-blue-50/30 p-4 rounded-xl">
                                             <p className="text-xs font-bold mb-1">Module overview</p>
-                                            <p className="text-[11px] text-gray-500 leading-relaxed">Learn the core concepts of programming, terminal commands, Git, and basic data types - the foundation for every back-end developer.</p>
+                                            <p className="text-[11px] text-gray-500 leading-relaxed">Understand key concepts step-by-step with explanations, examples, and interactive practice.</p>
                                             <div className="flex gap-2 mt-3">
-                                                <span className="text-[10px] px-2 py-1 bg-white border rounded-md font-medium flex items-center gap-1"><BookMarked size={10} /> 4 Modules</span>
-                                                <span className="text-[10px] px-2 py-1 bg-white border rounded-md font-medium flex items-center gap-1"><Target size={10} /> 12 days</span>
+                                                <span className="text-[10px] px-2 py-1 bg-white border rounded-md font-medium flex items-center gap-1"><BookMarked size={10} /> 4 Chapters </span>
+                                                <span className="text-[10px] px-2 py-1 bg-white border rounded-md font-medium flex items-center gap-1"><Target size={10} /> 10 days</span>
                                             </div>
                                         </div>
-                                        <LessonItem icon={<Code2 size={16} />} title="Programming basics" time="3 days" />
-                                        <LessonItem icon={<Terminal size={16} />} title="Terminal & CLI" time="2 days" />
+                                        <LessonItem icon={<Code2 size={16} />} title="Numbers & operations"  time="3 days" />
+                                        <LessonItem icon={<Terminal size={16} />} title="Basic equations" time="2 days" />
                                     </div>
                                 </div>
                             </div>
@@ -195,7 +195,7 @@ export default function Hero() {
                                     <ProgressChart data={PROGRESS_DATA} />
                                     <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
                                         <span className="text-[9px] text-gray-400">Total of</span>
-                                        <span className="text-[11px] font-bold">43 Sub-modules</span>
+                                        <span className="text-[11px] font-bold">18 Sub-Topics</span>
                                     </div>
                                 </div>
                                 <div className="mt-4 space-y-2">
@@ -227,24 +227,24 @@ export default function Hero() {
                                 <X size={12} className="text-gray-300" />
                             </div>
                             <p className="text-[10px] text-gray-500 leading-relaxed">
-                                Our AI already trained to be your assistant in creating a comfortable learning flow, just tell it and see the results.
+                            Your AI tutor helps you learn step-by-step, answer questions, and guide your progress.
                             </p>
                         </div>
 
                         <div className="flex-1 space-y-4 overflow-y-auto">
                             <ChatMessage
                                 role="ai"
-                                text="Based on your input, here's your personalized learning goal: Back-End Developer"
+                                text="Based on your preferences, here's your learning plan: Algebra Basics"
                                 time="10:25 AM"
                             />
                             <ChatMessage
                                 role="ai"
-                                text="I'll guide you through modules like programming basics, let's break it down:"
-                                list={["Fundamentals", "Back-End Basics", "Database"]}
+                                text="I’ll guide you through concepts step-by-step. Let’s start with fundamentals:"
+                                list={["Numbers & Operations", "Equations", "Word Problems"]}
                             />
                             <ChatMessage
                                 role="user"
-                                text="Sound good! It's awesome"
+                                text="That looks great, let’s start!"
                                 time="10:26 AM"
                             />
                         </div>

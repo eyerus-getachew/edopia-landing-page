@@ -14,15 +14,15 @@ export default function Getstarted() {
         <div className="flex items-center justify-center gap-2 mb-6">
           <div className="w-0.5 h-3.5 bg-[#4ebcd6]" />
           <span className="text-[12px] font-bold tracking-widest text-[#4ebcd6] uppercase">
-            HOW IT WORKS
+          GET STARTED
           </span>
         </div>
         <h2 className="text-[32px] md:text-[44px] font-bold text-[#1e293b] mb-6 tracking-tight leading-tight">
-          Beyond courses, meet <br className="hidden md:block" />
-          your AI-learning strategist
+        Start your personalized <br className="hidden md:block" />
+        learning journey
         </h2>
         <p className="text-[#64748b] text-[15px] md:text-[17px] leading-relaxed max-w-2xl mx-auto">
-          Edopia doesn't just give you courses. It builds a personalized
+        Tell us about your grade, subject, and goals. Our AI will create the right course and guide you step-by-step.
           <br className="hidden md:block" />
           learning path based on your goals, availability, and current skill level
         </p>
@@ -53,7 +53,7 @@ export default function Getstarted() {
               {/* Form Card */}
               <div className="bg-white rounded-[18px] shadow-[0_10px_30px_rgba(0,0,0,0.08)] p-7 md:p-9 w-full max-w-[360px] relative z-20 border border-gray-100">
                 <h3 className="text-[18px] font-bold text-[#1e293b] mb-6">
-                  What do you want to learn?
+                Set up your learning
                 </h3>
 
                 <div className="space-y-4">
@@ -62,7 +62,7 @@ export default function Getstarted() {
                       Goals
                     </label>
                     <div className="w-full border border-gray-200 rounded-[12px] py-3 px-4 flex justify-between items-center text-[13px] text-[#64748b] bg-white cursor-pointer hover:border-[#2eb3d1] transition-all">
-                      <span className="font-medium text-[#1e293b]">Become a back end developer</span>
+                      <span className="font-medium text-[#1e293b]">Learn Algebra basics</span>
                       <svg className="w-4 h-4 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
@@ -71,7 +71,7 @@ export default function Getstarted() {
 
                   <div>
                     <label className="block text-[12px] font-semibold text-[#475569] mb-1.5 pl-0.5">
-                      Level
+                    Grade / Level
                     </label>
                     <div className="w-full border border-gray-200 rounded-[10px] py-[10px] px-3.5 flex justify-between items-center text-[13px] text-[#334155] bg-white cursor-pointer hover:border-gray-300 transition-colors">
                       <span className="font-semibold text-gray-800">Beginner</span>
@@ -86,7 +86,7 @@ export default function Getstarted() {
                       Target Time
                     </label>
                     <div className="flex gap-1.5">
-                      {["1 month", "1 month", "1 month"].map((time, idx) => {
+                      {["1 week", "2 weeks", "1 month"].map((time, idx) => {
                         const id = `${time}-${idx}`;
                         const isActive = activeTime === id;
                         return (
@@ -107,7 +107,7 @@ export default function Getstarted() {
 
                   <div className="pt-2">
                     <button className="w-full bg-gradient-to-r from-[#2eb3d1] to-[#0f7f9c] hover:from-[#27a8c6] hover:to-[#0d6e86] text-white font-semibold py-3 rounded-[12px] text-[14px] transition-all duration-200 shadow-[0_8px_20px_rgba(46,179,209,0.35)] hover:shadow-[0_10px_25px_rgba(46,179,209,0.45)] active:scale-[0.98]">
-                      Generate learning path
+                    Start learning
                     </button>
                   </div>
                 </div>
@@ -137,13 +137,13 @@ export default function Getstarted() {
 
               <div className="mb-10">
                 <span className="inline-block px-3 py-1 rounded-md border border-[#fde2cf] text-[#ea580c] text-[11px] font-semibold mb-4 tracking-wider bg-[#fff7ed]">
-                  First step
+                Step 1
                 </span>
                 <h3 className="text-[24px] md:text-[26px] font-semibold text-[#0f172a] mb-3 tracking-tight leading-snug">
-                  Smart tracking & reminders
+                Personalized learning setup
                 </h3>
                 <p className="text-[#64748b] text-[15px] leading-relaxed max-w-[420px]">
-                  All you have to do is fill out the form and ai will quickly
+                Answer a few simple questions and our AI will create a course or guide you with a tutor based on your needs.
                   (even in less than 5 minutes) generate a customized
                   learning path for you.
                 </p>
@@ -155,11 +155,11 @@ export default function Getstarted() {
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3.5 gap-x-4">
                   {[
-                    "Your learning goal",
-                    "Your current skill level",
-                    "Tools & platforms you use",
-                    "And others questions",
-                  ].map((item, idx) => (
+  "Your grade and subject",
+  "Your learning goal",
+  "Your preferred language",
+  "Your study time",
+].map((item, idx) => (
                     <div key={idx} className="flex items-center gap-2">
                       <svg className="w-[18px] h-[18px] text-[#22c55e] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />

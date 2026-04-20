@@ -9,7 +9,7 @@ export default function Testimonials() {
                         TESTIMONIALS
                     </p>
                     <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-medium text-[#1a2f4a] max-w-3xl mx-auto leading-[1.2]">
-                        What learners and educators are saying about Edopia
+                    What students and parents are saying about Edopia
                     </h2>
                 </div>
                 {/* Carousel-style row: side cards peek + center focus */}
@@ -20,7 +20,7 @@ export default function Testimonials() {
                         aria-hidden
                     >
                         <img
-                            src="/learner.png"
+                            src="/ethipoian-students.png"
                             alt=""
                             className="w-full h-full object-cover object-center"
                         />
@@ -29,7 +29,7 @@ export default function Testimonials() {
                     {/* Main card — full-bleed photo */}
                     <div className="relative w-full max-w-[820px] h-[340px] sm:h-[380px] md:h-[420px] rounded-[28px] overflow-hidden shadow-[0_30px_60px_-15px_rgba(15,23,42,0.3)] z-10 transition-transform duration-500 hover:scale-[1.02]">
                         <img
-                            src="/learner.png"
+                            src="/ethipoian-students.png"
                             alt=""
                             className="absolute inset-0 w-full h-full object-cover object-center"
                         />
@@ -43,17 +43,17 @@ export default function Testimonials() {
                             <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between sm:gap-8">
                                 <div className="text-left max-w-xl">
                                     <p className="text-sm text-white/90 mb-3 font-medium">
-                                        Rafael Sarah • Junior Backend Developer
+                                    Solomon Tesfaye • High School Student
                                     </p>
                                     <p className="text-base sm:text-lg md:text-[1.15rem] text-white leading-relaxed italic font-normal">
-                                        “Edopia helped me skip the guesswork. The AI recommended a learning plan tailored to my current skills and daily schedule.”
+                                    “Edopia made learning easier for me. The AI explained concepts clearly and gave me a learning path that matched my level.”
                                     </p>
                                 </div>
                                 <div className="text-left sm:text-right shrink-0 pt-4 sm:pt-0">
                                     <p className="text-5xl sm:text-6xl md:text-7xl font-semibold text-white tracking-tight">
                                         +45%
                                     </p>
-                                    <p className="text-sm text-white/80 mt-2">Faster progress</p>
+                                    <p className="text-sm text-white/80 mt-2">Improved learning speed</p>
                                 </div>
                             </div>
                         </div>
@@ -65,7 +65,7 @@ export default function Testimonials() {
                         aria-hidden
                     >
                         <img
-                            src="/learner.png"
+                            src="/ethipoian-students.png"
                             alt=""
                             className="w-full h-full object-cover object-center"
                         />

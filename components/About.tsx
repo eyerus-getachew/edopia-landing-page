@@ -10,9 +10,7 @@ export default function About() {
                     About <span className="text-[#64bdbd]">Edopia</span>
                 </h2>
                 <p className="text-lg text-[#6b7280] leading-relaxed max-w-2xl mx-auto">
-                    We are revolutionizing the way you learn specialized tech skills by bringing you an AI-driven, highly
-                    personalized platform. Edopia doesn't just offer courses; it acts as your personal coach building the ideal
-                    curriculum based on your unique goals and schedule.
+                Edopia is an AI-powered learning platform that helps students learn smarter through personalized courses, real-time tutoring, and adaptive learning paths.
                 </p>
             </div>
 
@@ -25,8 +23,7 @@ export default function About() {
                     </div>
                     <h3 className="text-xl font-semibold text-[#1a2f4a] mb-3">Our Mission</h3>
                     <p className="text-[#6b7280] text-sm leading-relaxed">
-                        To empower developers worldwide with curated, AI-generated learning paths that eliminate guesswork
-                        and drastically accelerate the time to land their dream job.
+                    To make high-quality, personalized education accessible to every student using AI.
                     </p>
                 </div>
 
@@ -35,10 +32,9 @@ export default function About() {
                     <div className="w-14 h-14 bg-[#fff4e6] text-[#f59e0b] rounded-xl flex items-center justify-center mb-6">
                         <Users size={28} />
                     </div>
-                    <h3 className="text-xl font-bold text-slate-800 mb-3">Community First</h3>
+                    <h3 className="text-xl font-bold text-slate-800 mb-3">Student-Centered Learning</h3>
                     <p className="text-slate-500 text-sm leading-relaxed">
-                        Learning in isolation is slow. We believe in providing an interconnected platform where students,
-                        mentors, and experts can collaborate, share code, and grow together.
+                    Learning is better together. We provide a space where students can collaborate, support each other, and grow through shared learning experiences.
                     </p>
                 </div>
 
@@ -49,8 +45,7 @@ export default function About() {
                     </div>
                     <h3 className="text-xl font-bold text-slate-800 mb-3">Continuous Evolution</h3>
                     <p className="text-slate-500 text-sm leading-relaxed">
-                        The tech world moves fast, and so do we. Our AI constantly updates curriculums with the newest
-                        tools, ensuring you're never learning outdated concepts.
+                    Our AI continuously improves learning content and explanations based on how students learn, ensuring a better and more effective learning experience over time.
                     </p>
                 </div>
             </div>

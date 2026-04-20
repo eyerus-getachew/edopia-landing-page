@@ -14,12 +14,12 @@ const categories = [
 const faqs = [
     {
         question: "How does Edopia differ from a traditional LMS?",
-        answer: `Unlike most learning platforms that offer fixed, linear content, Edopia uses AI to create a learning path that evolves with you — making the experience more personal, efficient, and flexible.
+        answer: `Unlike traditional platforms with fixed content, Edopia builds a dynamic learning path that evolves with you.
 
-• Personalized by AI — no generic curriculum  
-• Adaptive roadmap that adjusts to your pace and progress  
-• Built-in AI assistant for real-time edits and support  
-• Automated tracking — no manual updates needed`,
+• Personalized by AI (no generic curriculum )
+• Adaptive roadmap based on your pace and progress 
+• Built-in AI assistant for real-time support  
+• Automated tracking`,
     },
     {
         question: "Do I need to plan my own curriculum?",
@@ -49,8 +49,11 @@ export default function FAQ() {
 
                 {/* Title */}
                 <h2 className="text-3xl md:text-4xl lg:text-[2.6rem] text-center font-medium text-[#1a2f4a] mb-16 leading-[1.2]">
-                    Frequently <br /> asked questions
+                Everything you need to know <br /> about Edopia
                 </h2>
+                <p className="text-center text-gray-500 text-sm md:text-base max-w-xl mx-auto mb-16">
+    Quick answers about how Edopia works, how it adapts to you, and how to get the most out of your learning experience.
+</p>
 
                 {/* Main Box */}
                 <div className="bg-white rounded-[28px] border border-gray-200 p-4 md:p-6 flex flex-col md:flex-row gap-6 md:gap-8 shadow-[0_10px_30px_rgba(0,0,0,0.04)]">
@@ -74,6 +77,14 @@ export default function FAQ() {
                             </motion.button>
                         ))}
                     </div>
+                    <div className="text-center mt-14">
+    <p className="text-sm text-gray-500 mb-4">
+        Still have questions?
+    </p>
+    <button className="px-5 py-2.5 text-sm font-medium text-white bg-[#0ea5c6] rounded-md shadow-sm hover:bg-[#0891bb] transition">
+        Contact support
+    </button>
+</div>
 
                     {/* FAQ Content */}
                     <div className="w-full md:w-[72%] border border-gray-200 rounded-xl overflow-hidden">
